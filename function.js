@@ -134,16 +134,28 @@ const simplePrint = () => console.log('simplePrint!');
 // }
 const add = (a, b) => a + b;
 
-const simpleMultiply = (a, b) => {
+const multiply = (a, b) => {
     return a * b;
 }
 
 simplePrint();
 console.log(add(3, 3));
-console.log(simpleMultiply(3, 3));
+console.log(multiply(3, 3));
 
 // IIFE(Immediately Invoked Function Expression) -> 함수를 바로 실행함
 (function hello() {
     console.log('IIFE');
 })();
 console.log('============');
+
+// QUIZ
+const substract = (a, b) => a - b;
+const divide = (a, b) => a / b;
+const calculate = (command, a, b) => {
+    if (command != add && command != substract && command != multiply && command != divide)
+        return null;
+    return command(a, b);
+}
+console.log(calculate(add, 1, 2))
+console.log(calculate(divide, 4, 2))
+console.log(calculate(simplePrint, 4, 2))
